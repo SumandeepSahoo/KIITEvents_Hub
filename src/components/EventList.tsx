@@ -5,8 +5,15 @@ import { Input } from "@/components/ui/input";
 import { Search } from 'lucide-react';
 import EventCard from "@/components/EventCard";
 import type { Event } from "@/lib/events";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
-const EventGrid = ({ events }: { events: Event[] }) => {
+const EventCarousel = ({ events }: { events: Event[] }) => {
   if (events.length === 0) {
     return (
       <div className="flex min-h-[300px] flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted-foreground/20 bg-muted/50 p-12 text-center">
@@ -16,11 +23,24 @@ const EventGrid = ({ events }: { events: Event[] }) => {
     );
   }
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      {events.map((event) => (
-        <EventCard key={event.id} event={event} />
-      ))}
-    </div>
+    <Carousel
+      opts={{
+        align: "start",
+      }}
+      className="w-full"
+    >
+      <CarouselContent>
+        {events.map((event) => (
+          <CarouselItem key={event.id} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+            <div className="p-1 h-full">
+              <EventCard event={event} />
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious className="hidden sm:flex" />
+      <CarouselNext className="hidden sm:flex" />
+    </Carousel>
   );
 };
 
@@ -55,7 +75,7 @@ export default function EventList({ title, events }: EventListProps) {
                 />
             </div>
         </div>
-        <EventGrid events={filteredEvents} />
+        <EventCarousel events={filteredEvents} />
     </section>
   );
 }
