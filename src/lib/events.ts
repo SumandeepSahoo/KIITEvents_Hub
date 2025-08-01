@@ -1,3 +1,4 @@
+
 export interface Event {
   id: string;
   title: string;
@@ -19,7 +20,7 @@ export const upcomingEvents: Event[] = [
     location: 'Campus-15 Auditorium',
     category: 'Technical',
     status: 'Upcoming',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://picsum.photos/seed/1/600/400',
     aiHint: 'code hackathon',
   },
   {
@@ -30,7 +31,7 @@ export const upcomingEvents: Event[] = [
     location: 'Convention Center',
     category: 'Workshop',
     status: 'Upcoming',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://picsum.photos/seed/2/600/400',
     aiHint: 'business conference',
   },
   {
@@ -41,7 +42,7 @@ export const upcomingEvents: Event[] = [
     location: 'Campus-7',
     category: 'Technical',
     status: 'Upcoming',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://picsum.photos/seed/3/600/400',
     aiHint: 'technology festival',
   },
   {
@@ -52,7 +53,7 @@ export const upcomingEvents: Event[] = [
     location: 'KIIT Stadium',
     category: 'Sports',
     status: 'Upcoming',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://picsum.photos/seed/4/600/400',
     aiHint: 'football sport',
   },
 ];
@@ -66,7 +67,7 @@ export const ongoingEvents: Event[] = [
     location: 'Art Gallery, Campus-12',
     category: 'Cultural',
     status: 'Ongoing',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://picsum.photos/seed/5/600/400',
     aiHint: 'art gallery',
   },
    {
@@ -77,7 +78,7 @@ export const ongoingEvents: Event[] = [
     location: 'Tesla Labs, Campus-3',
     category: 'Workshop',
     status: 'Ongoing',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://picsum.photos/seed/6/600/400',
     aiHint: 'robotics workshop',
   },
 ];
@@ -91,7 +92,7 @@ export const pastEvents: Event[] = [
     location: 'Amphitheatre, Campus-7',
     category: 'Cultural',
     status: 'Past',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://picsum.photos/seed/7/600/400',
     aiHint: 'music festival',
   },
   {
@@ -102,7 +103,7 @@ export const pastEvents: Event[] = [
     location: 'Online',
     category: 'Technical',
     status: 'Past',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://picsum.photos/seed/8/600/400',
     aiHint: 'blockchain crypto',
   },
    {
@@ -113,7 +114,7 @@ export const pastEvents: Event[] = [
     location: 'Starting from Campus-1',
     category: 'Sports',
     status: 'Past',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://picsum.photos/seed/9/600/400',
     aiHint: 'running marathon',
   },
 ];
