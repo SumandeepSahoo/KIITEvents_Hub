@@ -1,3 +1,4 @@
+
 export interface Society {
   id: string;
   name: string;
@@ -57,3 +58,7 @@ export const allSocieties: Society[] = [
     description: 'The literary society of KIIT, promoting reading, writing, and spoken word poetry among students.',
   },
 ];
+
+export function getSocietyById(id: string): Society | undefined {
+    return allSocieties.find(society => society.id === id);
+}

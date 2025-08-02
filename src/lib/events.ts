@@ -10,6 +10,7 @@ export interface Event {
   image: string;
   aiHint: string;
   description: string;
+  societyId?: string;
 }
 
 const allEvents: Event[] = [
@@ -24,6 +25,7 @@ const allEvents: Event[] = [
     image: 'https://picsum.photos/seed/1/600/400',
     aiHint: 'code hackathon',
     description: 'Join the most anticipated hackathon of the year! A 24-hour event where you can build, innovate, and collaborate with the brightest minds on campus. Prizes, mentorship, and a lot of caffeine await!',
+    societyId: 'soc-5',
   },
   {
     id: '2',
@@ -36,6 +38,7 @@ const allEvents: Event[] = [
     image: 'https://picsum.photos/seed/2/600/400',
     aiHint: 'business conference',
     description: 'A full-day workshop for aspiring entrepreneurs. Learn from successful founders, get insights on funding, and pitch your ideas to a panel of experts. Your journey from idea to unicorn starts here.',
+    societyId: 'soc-4',
   },
   {
     id: '3',
@@ -84,6 +87,7 @@ const allEvents: Event[] = [
     image: 'https://picsum.photos/seed/6/600/400',
     aiHint: 'robotics workshop',
     description: 'A hands-on workshop series where you will learn to build and program your own robots. From basic bots to advanced AI-powered machines, this is your chance to dive into the world of robotics.',
+    societyId: 'soc-1',
   },
   {
     id: '7',
@@ -108,6 +112,7 @@ const allEvents: Event[] = [
     image: 'https://picsum.photos/seed/8/600/400',
     aiHint: 'blockchain crypto',
     description: 'An online summit that demystifies the world of Web3 and Blockchain. Industry experts discuss the future of the internet, NFTs, and decentralized finance. A great learning opportunity for everyone.',
+    societyId: 'soc-5'
   },
    {
     id: '9',
@@ -129,4 +134,8 @@ export const pastEvents: Event[] = allEvents.filter(e => e.status === 'Past');
 
 export function getEventById(id: string): Event | undefined {
   return allEvents.find(event => event.id === id);
+}
+
+export function getEventsBySocietyId(societyId: string): Event[] {
+    return allEvents.filter(event => event.societyId === societyId);
 }
