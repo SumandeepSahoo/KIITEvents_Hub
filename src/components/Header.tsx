@@ -23,10 +23,35 @@ export default function Header() {
           <h1 className="text-xl font-bold font-headline tracking-tight text-foreground">KIITEvents Hub</h1>
         </div>
         <div className="flex items-center gap-4">
-          <Button variant="ghost" size="icon" className="rounded-full text-muted-foreground hover:text-foreground hover:bg-accent">
-            <Bell className="h-5 w-5" />
-            <span className="sr-only">Notifications</span>
-          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" className="rounded-full text-muted-foreground hover:text-foreground hover:bg-accent">
+                <Bell className="h-5 w-5" />
+                <span className="sr-only">Notifications</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-80">
+                <DropdownMenuLabel>Notifications</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                    <div className="flex flex-col gap-1">
+                        <p className="font-semibold">KIIT Hackathon registration is open!</p>
+                        <p className="text-xs text-muted-foreground">Don't miss out on the biggest tech event of the year.</p>
+                    </div>
+                </DropdownMenuItem>
+                 <DropdownMenuItem>
+                    <div className="flex flex-col gap-1">
+                        <p className="font-semibold">Your profile is incomplete</p>
+                        <p className="text-xs text-muted-foreground">Add a bio to let others know about you.</p>
+                    </div>
+                </DropdownMenuItem>
+                 <DropdownMenuSeparator />
+                 <DropdownMenuItem className="justify-center text-sm text-primary hover:!text-primary">
+                    View all notifications
+                 </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <div className="flex items-center gap-3 cursor-pointer">
