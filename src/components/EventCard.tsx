@@ -1,5 +1,6 @@
 import type { Event } from '@/lib/events';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -44,9 +45,11 @@ export default function EventCard({ event }: EventCardProps) {
         </div>
       </CardContent>
       <CardFooter className="p-4 pt-0">
-        <Button className="w-full" variant={isPast ? "outline" : "default"} disabled={isPast}>
-          {event.status === 'Upcoming' ? 'Register' : 'View Details'}
-        </Button>
+        <Link href={`/events/${event.id}`} className="w-full">
+          <Button className="w-full" variant={isPast ? "outline" : "default"} disabled={isPast}>
+            {event.status === 'Upcoming' ? 'Register' : 'View Details'}
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );
