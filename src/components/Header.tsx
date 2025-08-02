@@ -1,6 +1,16 @@
-import { Bell, Zap } from 'lucide-react';
+import { Bell, User, UserPlus, LogIn, Zap } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import Link from 'next/link';
 
 export default function Header() {
   return (
@@ -17,16 +27,45 @@ export default function Header() {
             <Bell className="h-5 w-5" />
             <span className="sr-only">Notifications</span>
           </Button>
-          <div className="flex items-center gap-3">
-            <Avatar className="h-9 w-9">
-              <AvatarImage src="https://placehold.co/40x40.png" alt="@student" data-ai-hint="person face" />
-              <AvatarFallback>S</AvatarFallback>
-            </Avatar>
-            <div className="hidden text-right sm:block">
-              <p className="text-sm font-medium text-foreground">Hey, Student</p>
-              <p className="text-xs text-muted-foreground">Welcome back!</p>
-            </div>
-          </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <div className="flex items-center gap-3 cursor-pointer">
+                <Avatar className="h-9 w-9">
+                  <AvatarImage src="https://placehold.co/40x40.png" alt="@student" data-ai-hint="person face" />
+                  <AvatarFallback>S</AvatarFallback>
+                </Avatar>
+                <div className="hidden text-right sm:block">
+                  <p className="text-sm font-medium text-foreground">Hey, Student</p>
+                  <p className="text-xs text-muted-foreground">Welcome back!</p>
+                </div>
+              </div>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56" align="end">
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem>
+                  <Link href="#" className="flex items-center w-full">
+                    <User className="mr-2 h-4 w-4" />
+                    <span>Profile</span>
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <Link href="#" className="flex items-center w-full">
+                  <UserPlus className="mr-2 h-4 w-4" />
+                  <span>Sign Up</span>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="#" className="flex items-center w-full">
+                  <LogIn className="mr-2 h-4 w-4" />
+                  <span>Login</span>
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </header>
