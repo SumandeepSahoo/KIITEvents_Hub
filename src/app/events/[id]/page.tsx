@@ -77,6 +77,7 @@ export default function EventDetailsPage({ params }: { params: { id: string } })
             <h2 className="text-3xl font-bold font-headline mb-4">About the Event</h2>
             <div className="prose prose-invert max-w-none text-muted-foreground text-lg leading-relaxed">
                 <p>{event.description}</p>
+                <p className="mt-4 text-sm italic">Please visit the official page for more details.</p>
             </div>
           </div>
 
