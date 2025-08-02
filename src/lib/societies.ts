@@ -57,6 +57,54 @@ export const allSocieties: Society[] = [
     aiHint: 'literature feather',
     description: 'The literary society of KIIT, promoting reading, writing, and spoken word poetry among students.',
   },
+  {
+    id: 'soc-7',
+    name: 'KIIT E-Cell',
+    category: 'Technical',
+    logo: 'https://picsum.photos/seed/soc7/200/200',
+    aiHint: 'entrepreneurship lightbulb',
+    description: 'The Entrepreneurship Cell of KIIT, fostering the spirit of entrepreneurship among students.',
+  },
+  {
+    id: 'soc-8',
+    name: 'KIIT Automotive Society',
+    category: 'Hobby',
+    logo: 'https://picsum.photos/seed/soc8/200/200',
+    aiHint: 'car engine',
+    description: 'For all the automobile enthusiasts, this society is all about designing, building, and racing vehicles.',
+  },
+  {
+    id: 'soc-9',
+    name: 'KIIT Social Wing',
+    category: 'Social',
+    logo: 'https://picsum.photos/seed/soc9/200/200',
+    aiHint: 'helping hands',
+    description: 'Dedicated to making a positive impact on society through various social welfare activities.',
+  },
+  {
+    id: 'soc-10',
+    name: 'KIIT Music Society',
+    category: 'Cultural',
+    logo: 'https://picsum.photos/seed/soc10/200/200',
+    aiHint: 'music notes',
+    description: 'A community for music lovers to collaborate, create, and perform music of various genres.',
+  },
+  {
+    id: 'soc-11',
+    name: 'KIIT Gaming Club',
+    category: 'Hobby',
+    logo: 'https://picsum.photos/seed/soc11/200/200',
+    aiHint: 'game controller',
+    description: 'The ultimate hub for gamers on campus, hosting tournaments and casual gaming sessions.',
+  },
+  {
+    id: 'soc-12',
+    name: 'KIIT AI/ML Club',
+    category: 'Technical',
+    logo: 'https://picsum.photos/seed/soc12/200/200',
+    aiHint: 'artificial intelligence',
+    description: 'Exploring the frontiers of Artificial Intelligence and Machine Learning through projects and discussions.',
+  }
 ];
 
 export function getSocietyById(id: string): Society | undefined {
