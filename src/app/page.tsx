@@ -4,6 +4,8 @@ import { upcomingEvents, ongoingEvents, pastEvents } from '@/lib/events';
 import { Button } from '@/components/ui/button';
 import { Plus } from 'lucide-react';
 import Link from 'next/link';
+import SocietyList from '@/components/SocietyList';
+import { allSocieties } from '@/lib/societies';
 
 export default function Home() {
   return (
@@ -21,6 +23,7 @@ export default function Home() {
           <div className="space-y-20">
             <EventList title="Upcoming Events" events={upcomingEvents} />
             <EventList title="Ongoing Events" events={ongoingEvents} />
+            <SocietyList title="Student Societies" societies={allSocieties} />
             <EventList title="Past Events" events={pastEvents} />
           </div>
         </div>
