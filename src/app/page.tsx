@@ -2,7 +2,8 @@ import Header from '@/components/Header';
 import EventList from '@/components/EventList';
 import { upcomingEvents, ongoingEvents, pastEvents } from '@/lib/events';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { Plus } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -24,7 +25,13 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <footer className="py-6 border-t border-border/20">
+       <Link href="/events/new">
+        <Button className="fixed bottom-8 right-8 h-16 w-16 rounded-full shadow-lg" size="icon">
+          <Plus className="h-8 w-8" />
+          <span className="sr-only">Create Event</span>
+        </Button>
+      </Link>
+      <footer className="py-6 border-t border-border/20 mt-12">
         <div className="container mx-auto text-center text-muted-foreground text-sm">
           &copy; {new Date().getFullYear()} KIITEvents Hub. All rights reserved.
         </div>
