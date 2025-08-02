@@ -45,7 +45,7 @@ export default function Header() {
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
                 <DropdownMenuItem>
-                  <Link href="#" className="flex items-center w-full">
+                  <Link href="/profile" className="flex items-center w-full">
                     <User className="mr-2 h-4 w-4" />
                     <span>Profile</span>
                   </Link>
@@ -53,13 +53,13 @@ export default function Header() {
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
-                <Link href="#" className="flex items-center w-full">
+                <Link href="/signup" className="flex items-center w-full">
                   <UserPlus className="mr-2 h-4 w-4" />
                   <span>Sign Up</span>
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href="#" className="flex items-center w-full">
+                <Link href="/login" className="flex items-center w-full">
                   <LogIn className="mr-2 h-4 w-4" />
                   <span>Login</span>
                 </Link>
