@@ -10,11 +10,19 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="fixed top-0 left-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
@@ -35,24 +43,16 @@ export default function Header() {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
                     <div className="flex flex-col gap-1">
-                        <p className="font-semibold">KIIT Hackathon registration is open!</p>
                         <p className="text-xs text-muted-foreground">Don't miss out on the biggest tech event of the year.</p>
-                    </div>
-                </DropdownMenuItem>
-                 <DropdownMenuItem>
-                    <div className="flex flex-col gap-1">
-                        <p className="font-semibold">Your profile is incomplete</p>
-                        <p className="text-xs text-muted-foreground">Add a bio to let others know about you.</p>
                     </div>
                 </DropdownMenuItem>
                  <DropdownMenuSeparator />
                  <DropdownMenuItem className="justify-center text-sm text-primary hover:!text-primary">
-                    View all notifications
                  </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <div className="flex items-center gap-3 cursor-pointer">
                 <Avatar className="h-9 w-9">
@@ -90,7 +90,18 @@ export default function Header() {
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
+          <SignedOut>
+              <SignInButton />
+              <SignUpButton>
+                <button className="bg-[#6c47ff] text-ceramic-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
+                  Sign Up
+                </button>
+              </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
         </div>
       </div>
     </header>

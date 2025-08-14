@@ -71,3 +71,44 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Sharp animated neon border for the hero box */
+.neon-sharp-box {
+  position: relative;
+  background: #101014;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.neon-sharp-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 1.5rem;
+  padding: 2px;
+  background: conic-gradient(
+    from 0deg,
+    #a855f7,
+    #9333ea,
+    #38bdf8,
+    #a21caf,
+    #a855f7
+  );
+  mask:
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  animation: neon-sharp-rotate 3s linear infinite;
+}
+
+@keyframes neon-sharp-rotate {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
