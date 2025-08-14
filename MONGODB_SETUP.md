@@ -6,7 +6,7 @@ Create a `.env.local` file in the `studio` directory with the following variable
 
 ```env
 # MongoDB Configuration
-MONGODB_URI=mongodb://localhost:27017/kiit-events
+MONGODB_URI=YOUR_MONGODB_CONNECTION_STRING
 MONGODB_DB=kiit-events
 ```
 
@@ -15,13 +15,13 @@ MONGODB_DB=kiit-events
 ### Option 1: Local MongoDB
 1. Install MongoDB locally on your machine
 2. Start the MongoDB service
-3. Use the connection string: `mongodb://localhost:27017/kiit-events`
+3. Use the connection string: `YOUR_MONGODB_CONNECTION_STRING`
 
 ### Option 2: MongoDB Atlas (Cloud)
 1. Create a free account at [MongoDB Atlas](https://www.mongodb.com/atlas)
 2. Create a new cluster
 3. Get your connection string from the cluster
-4. Use the connection string: `mongodb+srv://username:password@cluster.mongodb.net/kiit-events?retryWrites=true&w=majority`
+4. Use the connection string: MONGODB_URI=mongodb+srv://<username>:<password>@<cluster-url>/kiit-events
 
 ## Database Structure
 
